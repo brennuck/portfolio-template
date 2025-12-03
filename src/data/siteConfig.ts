@@ -19,6 +19,12 @@ export const siteConfig = {
         "With a background in full-stack development, I enjoy working across the entire product lifecycle — from initial concept to polished implementation. I'm particularly drawn to projects that challenge conventional thinking and push creative boundaries.",
         "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or searching for the perfect cup of coffee.",
     ],
+    // About page images (optional collage/gallery)
+    aboutImages: [
+        // Add your image URLs here, e.g.:
+        // "https://example.com/photo1.jpg",
+        // "https://example.com/photo2.jpg",
+    ] as string[],
 
     // Contact
     contactIntro: [
