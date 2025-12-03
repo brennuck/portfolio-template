@@ -11,20 +11,19 @@ const Work = () => {
 
             <div className="work__grid">
                 {projects.map((project) => (
-                    <article key={project.id} className="work__project">
+                    <Link
+                        key={project.id}
+                        to={`/work/${project.id}`}
+                        className="work__project"
+                    >
                         <div className="work__project-header">
                             <h2 className="work__project-title">
                                 {project.title}
                             </h2>
-                            {project.link && (
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="work__project-link"
-                                >
-                                    View →
-                                </a>
+                            {project.year && (
+                                <span className="work__project-year">
+                                    {project.year}
+                                </span>
                             )}
                         </div>
                         <p className="work__project-description">
@@ -37,7 +36,10 @@ const Work = () => {
                                 </span>
                             ))}
                         </div>
-                    </article>
+                        <span className="work__project-cta">
+                            View project →
+                        </span>
+                    </Link>
                 ))}
             </div>
 
