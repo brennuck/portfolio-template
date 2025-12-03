@@ -2,6 +2,7 @@ export const siteConfig = {
     // Personal Info
     name: "Brennon Nuckols",
     initials: "BN",
+    logo: "", // Optional: Add logo URL here to replace initials (e.g., "/logo.svg")
     title: "Software Engineer",
     email: "hello@bnuckols.com",
 
