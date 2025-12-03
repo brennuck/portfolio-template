@@ -1,4 +1,8 @@
 export const siteConfig = {
+    // Site Meta
+    siteTitle: "John Doe — Full Stack Developer", // Browser tab title
+    favicon: "/favicon.svg", // Path to favicon (put file in /public folder)
+
     // Personal Info
     name: "John Doe",
     initials: "JD",

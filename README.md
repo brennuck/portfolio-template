@@ -32,6 +32,10 @@ All your personal content lives in `src/data/`. Edit these files to make it your
 
 ```ts
 export const siteConfig = {
+    // Site Meta
+    siteTitle: "Your Name — Your Title",  // Browser tab title
+    favicon: "/favicon.svg",              // Path to favicon in /public
+
     // Personal Info
     name: "Your Name",
     initials: "YN",
