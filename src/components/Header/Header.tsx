@@ -1,18 +1,22 @@
 import { NavLink } from "react-router-dom";
 import { siteConfig } from "../../data";
 import ThemeToggle from "../ThemeToggle";
+import StatusIndicator from "../StatusIndicator";
 import "./Header.css";
 
 const Header = () => {
     return (
         <header className="header">
-            <NavLink to="/" className="header__logo">
-                {siteConfig.logo ? (
-                    <img src={siteConfig.logo} alt={siteConfig.name} className="header__logo-img" />
-                ) : (
-                    siteConfig.initials
-                )}
-            </NavLink>
+            <div className="header__left">
+                <NavLink to="/" className="header__logo">
+                    {siteConfig.logo ? (
+                        <img src={siteConfig.logo} alt={siteConfig.name} className="header__logo-img" />
+                    ) : (
+                        siteConfig.initials
+                    )}
+                </NavLink>
+                <StatusIndicator />
+            </div>
             <div className="header__right">
                 <nav className="header__nav">
                     <NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} end>

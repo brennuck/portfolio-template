@@ -1,5 +1,5 @@
 import { siteConfig } from "../../data";
-import { PageTransition } from "../../components";
+import { PageTransition, StatusIndicator } from "../../components";
 import "./Contact.css";
 
 const Contact = () => {
@@ -7,6 +7,10 @@ const Contact = () => {
         <section className="contact">
             <PageTransition>
                 <h1 className="contact__title">Contact</h1>
+
+                <div className="contact__availability">
+                    <StatusIndicator showLabel />
+                </div>
 
                 <div className="contact__content">
                     {siteConfig.contactIntro.map((paragraph, index) => (
@@ -53,15 +57,6 @@ const Contact = () => {
                         </a>
                     )}
                 </div>
-
-                {siteConfig.availabilityStatus && (
-                    <div className="contact__availability">
-                        <span className="contact__status"></span>
-                        <span className="contact__status-text">
-                            {siteConfig.availability}
-                        </span>
-                    </div>
-                )}
             </PageTransition>
         </section>
     );

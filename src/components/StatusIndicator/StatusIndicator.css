@@ -1,0 +1,82 @@
+.status-indicator {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.status-indicator__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-indicator__dot--pulse {
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-indicator--small .status-indicator__dot {
+    width: 6px;
+    height: 6px;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.status-indicator__label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.status-indicator--small .status-indicator__label {
+    font-size: 0.75rem;
+}
+
+.status-indicator__tooltip {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    padding: 0.375rem 0.625rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-text);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.status-indicator__tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 12px;
+    border: 5px solid transparent;
+    border-bottom-color: var(--color-border);
+}
+
+.status-indicator:hover .status-indicator__tooltip,
+.status-indicator--active .status-indicator__tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide tooltip if label is shown */
+.status-indicator:has(.status-indicator__label) .status-indicator__tooltip {
+    display: none;
+}
+

@@ -32,8 +32,12 @@ export const siteConfig = {
         "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great.",
         "Feel free to reach out — I'd love to hear from you.",
     ],
-    availability: "Currently available for freelance work",
-    availabilityStatus: true, // true = green dot, false = hidden
+    availabilityStatus: true, // true = show status indicator, false = hidden
+    status: "searching" as "searching" | "open" | "closed",
+    // searching = green + pulse (Actively searching)
+    // open = yellow (Open to offers)
+    // closed = red (Closed to offers)
+    statusMessage: "", // Optional: Custom message (leave empty to use default)
 
     // Social Links
     social: {
