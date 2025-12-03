@@ -147,16 +147,15 @@ src/
 
 ## Features
 
-- **Single Page Application** with React Router
-- **Dark/light mode** with localStorage persistence & no flash on load
-- **Availability status** indicator (like Slack) — searchng/open/closed
-- **Dot-matrix clock** in footer showing local time
-- **Image gallery** with lightbox for projects & about page
-- **Page transitions** with reduced-motion support
-- **Fully responsive** (mobile-first design)
-- **Phone formatting** — enter raw digits, displays formatted
-- **Logo support** — use image or fall back to initials
-- **TypeScript** throughout
+-   **Single Page Application** with React Router
+-   **Dark/light mode** with localStorage persistence
+-   **Availability status** indicator — searchng/open/closed
+-   **Dot-matrix clock** in footer showing local time
+-   **Image gallery** with lightbox for projects & about page
+-   **Page transitions** with reduced-motion support
+-   **Fully responsive** (mobile-first design)
+-   **Logo support** — use image or fall back to initials
+-   **TypeScript** throughout
 
 ## Styling
 
@@ -186,11 +185,11 @@ Theme colors are in `src/index.css`. The template uses warm charcoal (dark) and 
 
 ## Tech Stack
 
-- **React 19** — UI framework
-- **TypeScript** — Type safety
-- **React Router v7** — Client-side routing
-- **Vite** — Build tool & dev server
-- **CSS** — Styling (no frameworks)
+-   **React 19** — UI framework
+-   **TypeScript** — Type safety
+-   **React Router v7** — Client-side routing
+-   **Vite** — Build tool & dev server
+-   **CSS** — Styling (no frameworks)
 
 ## Scripts
 
