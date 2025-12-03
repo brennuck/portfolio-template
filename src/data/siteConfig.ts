@@ -32,7 +32,5 @@ export const siteConfig = {
     social: {
         github: "https://github.com",
         linkedin: "https://linkedin.com",
-        twitter: "https://twitter.com",
     },
 };
-
