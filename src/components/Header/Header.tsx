@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { siteConfig } from "../../data";
 import ThemeToggle from "../ThemeToggle";
 import "./Header.css";
 
@@ -6,7 +7,7 @@ const Header = () => {
     return (
         <header className="header">
             <NavLink to="/" className="header__logo">
-                BN
+                {siteConfig.initials}
             </NavLink>
             <div className="header__right">
                 <nav className="header__nav">
