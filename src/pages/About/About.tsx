@@ -1,4 +1,4 @@
-import { siteConfig, skills, experience } from "../../data";
+import { siteConfig, skills, experience, education } from "../../data";
 import { PageTransition } from "../../components";
 import "./About.css";
 
@@ -40,6 +40,27 @@ const About = () => {
                                 </div>
                                 <span className="about__job-company">
                                     {job.company}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="about__section">
+                    <h2 className="about__section-title">Education</h2>
+                    <div className="about__education">
+                        {education.map((edu) => (
+                            <div key={edu.id} className="about__edu">
+                                <div className="about__edu-header">
+                                    <span className="about__edu-degree">
+                                        {edu.degree} in {edu.field}
+                                    </span>
+                                    <span className="about__edu-date">
+                                        {edu.startDate} - {edu.endDate}
+                                    </span>
+                                </div>
+                                <span className="about__edu-institution">
+                                    {edu.institution}
                                 </span>
                             </div>
                         ))}
