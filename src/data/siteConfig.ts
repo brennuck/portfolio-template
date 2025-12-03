@@ -5,6 +5,7 @@ export const siteConfig = {
     logo: "", // Optional: Add logo URL here to replace initials (e.g., "/logo.svg")
     title: "Software Engineer",
     email: "hello@bnuckols.com",
+    phone: "", // Optional: Add phone number (e.g., "+1 555 123 4567")
 
     // Hero/Home
     headline: "Brennon Nuckols",
