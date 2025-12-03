@@ -1,0 +1,117 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 560px;
+}
+
+.about__content p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.about__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about__section-title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.about__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.about__skill {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.about__experience {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__job {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about__job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.about__job-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.about__job-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.about__job-company {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Mobile styles */
+@media (max-width: 640px) {
+  .about {
+    gap: 2rem;
+  }
+
+  .about__content p {
+    font-size: 0.9375rem;
+  }
+
+  .about__job-header {
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+}
+
