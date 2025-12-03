@@ -11,7 +11,7 @@ export const siteConfig = {
     description:
         "Building thoughtful digital experiences with clean code and minimal design. Currently focused on web development and creative technology.",
     ctaText: "View my work",
-    ctaLink: "/work",
+    ctaLink: "/projects",
 
     // About
     bio: [
