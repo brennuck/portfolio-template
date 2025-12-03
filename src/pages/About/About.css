@@ -29,6 +29,10 @@
   line-height: 1.7;
 }
 
+.about__gallery {
+  margin-top: -1rem;
+}
+
 .about__section {
   display: flex;
   flex-direction: column;

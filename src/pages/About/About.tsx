@@ -1,5 +1,5 @@
 import { siteConfig, skills, experience, education } from "../../data";
-import { PageTransition } from "../../components";
+import { PageTransition, ImageGallery } from "../../components";
 import "./About.css";
 
 const About = () => {
@@ -13,6 +13,12 @@ const About = () => {
                         <p key={index}>{paragraph}</p>
                     ))}
                 </div>
+
+                {siteConfig.aboutImages && siteConfig.aboutImages.length > 0 && (
+                    <div className="about__gallery">
+                        <ImageGallery images={siteConfig.aboutImages} alt={siteConfig.name} />
+                    </div>
+                )}
 
                 <div className="about__section">
                     <h2 className="about__section-title">Skills</h2>

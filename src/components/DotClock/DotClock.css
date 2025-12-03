@@ -1,0 +1,44 @@
+.dot-clock {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.dot-clock__char {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.dot-clock__char--colon {
+    margin: 0 1px;
+}
+
+.dot-clock__period {
+    display: flex;
+    gap: 2px;
+    margin-left: 4px;
+}
+
+.dot-clock__row {
+    display: flex;
+    gap: 1px;
+}
+
+.dot-clock__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 0.5px;
+    background-color: var(--color-border);
+    transition: background-color 0.15s ease;
+}
+
+.dot-clock__dot--active {
+    background-color: var(--color-text-muted);
+}
+
+/* Slightly larger on hover for fun */
+.dot-clock:hover .dot-clock__dot--active {
+    background-color: var(--color-text);
+}
+
