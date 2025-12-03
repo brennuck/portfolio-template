@@ -1,40 +1,40 @@
 export const siteConfig = {
     // Personal Info
-    name: "Brennon Nuckols",
-    initials: "BN",
+    name: "John Doe",
+    initials: "JD",
     logo: "", // Optional: Add logo URL here to replace initials (e.g., "/logo.svg")
-    title: "Software Engineer",
-    email: "hello@bnuckols.com",
-    phone: "", // Optional: Add phone number (e.g., "+1 555 123 4567")
+    title: "Full Stack Developer",
+    email: "john@johndoe.dev",
+    phone: "5551234567", // Optional: Add phone number (e.g., "+1 555 123 4567")
 
     // Hero/Home
-    headline: "Brennon Nuckols",
-    tagline: "Software Engineer",
+    headline: "John Doe",
+    tagline: "Full Stack Developer",
     description:
-        "Building thoughtful digital experiences with clean code and minimal design. Currently focused on web development and creative technology.",
+        "Crafting seamless web experiences from front to back. I specialize in React, Node.js, and building products that users love.",
     ctaText: "View my work",
     ctaLink: "/projects",
 
     // About
     bio: [
-        "I'm a software engineer with a passion for building elegant, user-focused products. I believe in writing clean, maintainable code and creating experiences that feel natural and intuitive.",
-        "With a background in full-stack development, I enjoy working across the entire product lifecycle — from initial concept to polished implementation. I'm particularly drawn to projects that challenge conventional thinking and push creative boundaries.",
-        "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or searching for the perfect cup of coffee.",
+        "Hey, I'm John — a full stack developer based in San Francisco with 5+ years of experience building web applications that scale.",
+        "I started coding in college and never looked back. There's something magical about turning ideas into working software that people actually use every day.",
+        "When I'm not at my keyboard, you'll find me hiking Bay Area trails, experimenting with new recipes, or playing guitar badly but enthusiastically.",
     ],
     // About page images (optional collage/gallery)
     aboutImages: [
-        // Add your image URLs here, e.g.:
-        // "https://example.com/photo1.jpg",
-        // "https://example.com/photo2.jpg",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
     ] as string[],
 
     // Contact
     contactIntro: [
-        "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great.",
-        "Feel free to reach out — I'd love to hear from you.",
+        "I'm always excited to connect with fellow developers, potential collaborators, or anyone working on interesting problems.",
+        "Drop me a line — let's build something great together.",
     ],
     availabilityStatus: true, // true = show status indicator, false = hidden
-    status: "searching" as "searching" | "open" | "closed",
+    status: "open" as "searching" | "open" | "closed",
     // searching = green + pulse (Actively searching)
     // open = yellow (Open to offers)
     // closed = red (Closed to offers)
@@ -42,7 +42,8 @@ export const siteConfig = {
 
     // Social Links
     social: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
+        github: "https://github.com/johndoe",
+        linkedin: "https://linkedin.com/in/johndoe",
+        twitter: "https://twitter.com/johndoe",
     },
 };

@@ -10,19 +10,27 @@ export interface Job {
 export const experience: Job[] = [
     {
         id: "job-1",
-        title: "Senior Software Engineer",
-        company: "Company Name",
-        description: "Leading development of scalable web applications and mentoring junior engineers. Focused on improving developer experience and system architecture.",
+        title: "Senior Full Stack Developer",
+        company: "TechFlow Inc.",
+        description: "Leading a team of 4 engineers building a real-time analytics platform. Reduced page load times by 60% and implemented CI/CD pipelines.",
         startDate: "2022",
         endDate: "Present",
     },
     {
         id: "job-2",
-        title: "Software Engineer",
-        company: "Previous Company",
-        description: "Built and maintained full-stack features for a high-traffic platform. Collaborated with cross-functional teams to deliver user-focused solutions.",
+        title: "Full Stack Developer",
+        company: "StartupXYZ",
+        description: "Built the core product from 0 to 50k users. Owned the entire stack from React frontend to Node.js microservices on AWS.",
         startDate: "2020",
         endDate: "2022",
+    },
+    {
+        id: "job-3",
+        title: "Frontend Developer",
+        company: "Digital Agency Co.",
+        description: "Delivered 20+ client projects ranging from e-commerce sites to interactive dashboards. Specialized in performance optimization.",
+        startDate: "2019",
+        endDate: "2020",
     },
 ];
 
