@@ -1,66 +1,70 @@
 import { Link } from "react-router-dom";
 import { siteConfig, projects, workIntro } from "../../data";
+import { PageTransition } from "../../components";
 import "./Work.css";
 
 const Work = () => {
     return (
         <section className="work">
-            <h1 className="work__title">Work</h1>
+            <PageTransition>
+                <h1 className="work__title">Work</h1>
 
-            <p className="work__intro">{workIntro}</p>
+                <p className="work__intro">{workIntro}</p>
 
-            <div className="work__grid">
-                {projects.map((project) => (
-                    <Link
-                        key={project.id}
-                        to={`/work/${project.id}`}
-                        className="work__project"
-                    >
-                        <div className="work__project-header">
-                            <h2 className="work__project-title">
-                                {project.title}
-                            </h2>
-                            {project.year && (
-                                <span className="work__project-year">
-                                    {project.year}
-                                </span>
-                            )}
-                        </div>
-                        <p className="work__project-description">
-                            {project.description}
-                        </p>
-                        <div className="work__project-tags">
-                            {project.tags.map((tag) => (
-                                <span key={tag} className="work__project-tag">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                        <span className="work__project-cta">
-                            View project →
-                        </span>
-                    </Link>
-                ))}
-            </div>
+                <div className="work__grid">
+                    {projects.map((project, index) => (
+                        <Link
+                            key={project.id}
+                            to={`/work/${project.id}`}
+                            className="work__project"
+                            style={{ "--project-delay": `${index * 0.06}s` } as React.CSSProperties}
+                        >
+                            <div className="work__project-header">
+                                <h2 className="work__project-title">
+                                    {project.title}
+                                </h2>
+                                {project.year && (
+                                    <span className="work__project-year">
+                                        {project.year}
+                                    </span>
+                                )}
+                            </div>
+                            <p className="work__project-description">
+                                {project.description}
+                            </p>
+                            <div className="work__project-tags">
+                                {project.tags.map((tag) => (
+                                    <span key={tag} className="work__project-tag">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <span className="work__project-cta">
+                                View project →
+                            </span>
+                        </Link>
+                    ))}
+                </div>
 
-            <div className="work__more">
-                <p>
-                    Want to see more? Check out my{" "}
-                    <a
-                        href={siteConfig.social.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="work__more-link"
-                    >
-                        GitHub
-                    </a>{" "}
-                    or{" "}
-                    <Link to="/contact" className="work__more-link">
-                        get in touch
-                    </Link>
-                    .
-                </p>
-            </div>
+                <div className="work__more">
+                    <p>
+                        Want to see more? Check out my{" "}
+                        <a
+                            href={siteConfig.social.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="work__more-link"
+                        >
+                            GitHub
+                        </a>{" "}
+                        or{" "}
+                        <Link to="/contact" className="work__more-link">
+                            get in touch
+                        </Link>
+                        .
+                    </p>
+                </div>
+            </PageTransition>
         </section>
     );
 };

@@ -3,3 +3,4 @@ export { default as Footer } from "./Footer";
 export { default as Layout } from "./Layout";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as ImageGallery } from "./ImageGallery";
+export { default as PageTransition } from "./PageTransition";
