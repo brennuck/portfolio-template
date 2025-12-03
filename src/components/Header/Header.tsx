@@ -29,12 +29,12 @@ const Header = () => {
                         About
                     </NavLink>
                     <NavLink
-                        to="/work"
+                        to="/projects"
                         className={({ isActive }) =>
                             isActive ? "nav-link active" : "nav-link"
                         }
                     >
-                        Work
+                        Projects
                     </NavLink>
                     <NavLink
                         to="/contact"

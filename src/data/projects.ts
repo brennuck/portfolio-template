@@ -59,7 +59,7 @@ export const projects: Project[] = [
     },
 ];
 
-export const workIntro =
+export const projectsIntro =
     "A selection of projects I've worked on. Each represents a unique challenge and learning opportunity.";
 
 // Helper to find a project by ID

@@ -8,14 +8,14 @@ const ProjectDetail = () => {
     const project = projectId ? getProjectById(projectId) : undefined;
 
     if (!project) {
-        return <Navigate to="/work" replace />;
+        return <Navigate to="/projects" replace />;
     }
 
     return (
         <article className="project-detail">
             <PageTransition>
-                <Link to="/work" className="project-detail__back">
-                    ← Back to work
+                <Link to="/projects" className="project-detail__back">
+                    ← Back to projects
                 </Link>
 
                 <header className="project-detail__header">

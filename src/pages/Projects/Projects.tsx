@@ -1,64 +1,64 @@
 import { Link } from "react-router-dom";
-import { siteConfig, projects, workIntro } from "../../data";
+import { siteConfig, projects, projectsIntro } from "../../data";
 import { PageTransition } from "../../components";
-import "./Work.css";
+import "./Projects.css";
 
-const Work = () => {
+const Projects = () => {
     return (
-        <section className="work">
+        <section className="projects">
             <PageTransition>
-                <h1 className="work__title">Work</h1>
+                <h1 className="projects__title">Projects</h1>
 
-                <p className="work__intro">{workIntro}</p>
+                <p className="projects__intro">{projectsIntro}</p>
 
-                <div className="work__grid">
+                <div className="projects__grid">
                     {projects.map((project, index) => (
                         <Link
                             key={project.id}
-                            to={`/work/${project.id}`}
-                            className="work__project"
+                            to={`/projects/${project.id}`}
+                            className="projects__item"
                             style={{ "--project-delay": `${index * 0.06}s` } as React.CSSProperties}
                         >
-                            <div className="work__project-header">
-                                <h2 className="work__project-title">
+                            <div className="projects__item-header">
+                                <h2 className="projects__item-title">
                                     {project.title}
                                 </h2>
                                 {project.year && (
-                                    <span className="work__project-year">
+                                    <span className="projects__item-year">
                                         {project.year}
                                     </span>
                                 )}
                             </div>
-                            <p className="work__project-description">
+                            <p className="projects__item-description">
                                 {project.description}
                             </p>
-                            <div className="work__project-tags">
+                            <div className="projects__item-tags">
                                 {project.tags.map((tag) => (
-                                    <span key={tag} className="work__project-tag">
+                                    <span key={tag} className="projects__item-tag">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <span className="work__project-cta">
+                            <span className="projects__item-cta">
                                 View project →
                             </span>
                         </Link>
                     ))}
                 </div>
 
-                <div className="work__more">
+                <div className="projects__more">
                     <p>
                         Want to see more? Check out my{" "}
                         <a
                             href={siteConfig.social.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="work__more-link"
+                            className="projects__more-link"
                         >
                             GitHub
                         </a>{" "}
                         or{" "}
-                        <Link to="/contact" className="work__more-link">
+                        <Link to="/contact" className="projects__more-link">
                             get in touch
                         </Link>
                         .
@@ -69,4 +69,5 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default Projects;
+
