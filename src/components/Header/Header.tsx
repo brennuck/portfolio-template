@@ -1,10 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { siteConfig } from "../../data";
 import ThemeToggle from "../ThemeToggle";
 import StatusIndicator from "../StatusIndicator";
 import "./Header.css";
 
 const Header = () => {
+    const location = useLocation();
+    const isContactPage = location.pathname === "/contact";
+
     return (
         <header className="header">
             <div className="header__left">
@@ -15,7 +18,7 @@ const Header = () => {
                         siteConfig.initials
                     )}
                 </NavLink>
-                <StatusIndicator />
+                {!isContactPage && <StatusIndicator />}
             </div>
             <div className="header__right">
                 <nav className="header__nav">
