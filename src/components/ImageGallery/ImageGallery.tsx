@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import "./ImageGallery.css";
 
 interface ImageGalleryProps {
@@ -10,15 +10,27 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
+    // Manage body overflow based on lightbox state, with cleanup on unmount
+    useEffect(() => {
+        if (lightboxOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        // Cleanup: restore overflow when component unmounts or lightbox closes
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [lightboxOpen]);
+
     const openLightbox = useCallback((index: number) => {
         setActiveIndex(index);
         setLightboxOpen(true);
-        document.body.style.overflow = "hidden";
     }, []);
 
     const closeLightbox = useCallback(() => {
         setLightboxOpen(false);
-        document.body.style.overflow = "";
     }, []);
 
     const goToPrevious = useCallback(() => {
@@ -66,12 +78,7 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
                         onClick={() => openLightbox(index)}
                         style={{ "--delay": `${index * 0.05}s` } as React.CSSProperties}
                     >
-                        <img
-                            src={src}
-                            alt={`${alt} ${index + 1}`}
-                            className="gallery__image"
-                            loading="lazy"
-                        />
+                        <img src={src} alt={`${alt} ${index + 1}`} className="gallery__image" loading="lazy" />
                         <div className="gallery__overlay">
                             <svg
                                 className="gallery__icon"
@@ -100,26 +107,22 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
                     aria-label="Image lightbox"
                 >
                     <div className="lightbox__backdrop" />
-                    
-                    <button
-                        className="lightbox__close"
-                        onClick={closeLightbox}
-                        aria-label="Close lightbox"
-                    >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+
+                    <button className="lightbox__close" onClick={closeLightbox} aria-label="Close lightbox">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                        >
                             <path d="M18 6L6 18M6 6l12 12" />
                         </svg>
                     </button>
 
-                    <div
-                        className="lightbox__content"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <img
-                            src={images[activeIndex]}
-                            alt={`${alt} ${activeIndex + 1}`}
-                            className="lightbox__image"
-                        />
+                    <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
+                        <img src={images[activeIndex]} alt={`${alt} ${activeIndex + 1}`} className="lightbox__image" />
                     </div>
 
                     {images.length > 1 && (
@@ -132,7 +135,14 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
                                 }}
                                 aria-label="Previous image"
                             >
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                >
                                     <path d="M15 18l-6-6 6-6" />
                                 </svg>
                             </button>
@@ -144,7 +154,14 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
                                 }}
                                 aria-label="Next image"
                             >
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                >
                                     <path d="M9 18l6-6-6-6" />
                                 </svg>
                             </button>
@@ -161,4 +178,3 @@ const ImageGallery = ({ images, alt = "Project image" }: ImageGalleryProps) => {
 };
 
 export default ImageGallery;
-
