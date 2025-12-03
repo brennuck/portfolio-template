@@ -1,9 +1,8 @@
 import { siteConfig } from "../../data";
+import DotClock from "../DotClock";
 import "./Footer.css";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
-
     return (
         <footer className="footer">
             <div className="footer__links">
@@ -27,20 +26,8 @@ const Footer = () => {
                         LinkedIn
                     </a>
                 )}
-                {siteConfig.social.twitter && (
-                    <a
-                        href={siteConfig.social.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="footer__link"
-                    >
-                        Twitter
-                    </a>
-                )}
             </div>
-            <p className="footer__copyright">
-                © {currentYear} {siteConfig.name}
-            </p>
+            <DotClock />
         </footer>
     );
 };
