@@ -1,117 +1,134 @@
 /* Import fonts - using Söhne-inspired stack with fallbacks */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 :root {
-  /* Typography */
-  --font-heading: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
+    /* Typography */
+    --font-heading: "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    --font-mono: "IBM Plex Mono", "SF Mono", "Fira Code", monospace;
 
-  /* Colors - Dark theme */
-  --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-border: #262626;
-  --color-text: #fafafa;
-  --color-text-muted: #737373;
-  --color-accent: #a3a3a3;
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
 
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 4rem;
+    /* Default to dark theme colors */
+    --color-bg: #0a0a0a;
+    --color-surface: #141414;
+    --color-border: #262626;
+    --color-text: #fafafa;
+    --color-text-muted: #737373;
+    --color-accent: #a3a3a3;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --color-bg: #0a0a0a;
+    --color-surface: #141414;
+    --color-border: #262626;
+    --color-text: #fafafa;
+    --color-text-muted: #737373;
+    --color-accent: #a3a3a3;
 }
 
 /* Light theme */
-@media (prefers-color-scheme: light) {
-  :root {
+[data-theme="light"] {
     --color-bg: #fafafa;
     --color-surface: #f5f5f5;
     --color-border: #e5e5e5;
     --color-text: #0a0a0a;
     --color-text-muted: #737373;
     --color-accent: #525252;
-  }
 }
 
 /* Reset */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  min-height: 100vh;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Typography defaults */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  line-height: 1.2;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 p {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--color-text-muted);
-  outline-offset: 2px;
+    outline: 2px solid var(--color-text-muted);
+    outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-text);
-  color: var(--color-bg);
+    background-color: var(--color-text);
+    color: var(--color-bg);
 }
 
 /* Smooth scrolling */
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 /* Image defaults */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Remove default button styles */
 button {
-  font-family: inherit;
-  font-size: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* Remove list styles */
-ul, ol {
-  list-style: none;
+ul,
+ol {
+    list-style: none;
 }
