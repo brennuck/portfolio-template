@@ -1,20 +1,28 @@
 # Portfolio Template
 
-A minimal, responsive portfolio template built with React, TypeScript, and CSS. Clone it, edit a few files, and you have your own portfolio.
+A minimal, responsive portfolio template built with React, TypeScript, and CSS. Fork it, edit a few files, and you have your own portfolio.
 
 ## Quick Start
 
+### 1. Fork the repo
+
+Click the **Fork** button in the top right of this page to create your own copy.
+
+### 2. Clone your fork
+
 ```bash
-# Clone the repo
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/YOUR-USERNAME/portfolio.git
 cd portfolio
+```
 
-# Install dependencies
+### 3. Install & run
+
+```bash
 npm install
-
-# Start dev server
 npm run dev
 ```
+
+Now open [http://localhost:5173](http://localhost:5173) and start customizing!
 
 ## Customization
 
